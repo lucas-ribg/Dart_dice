@@ -34,15 +34,17 @@ void main() {
     print('Soma dos seus dados: ${player.score}');
     print('Soma dos dados do computador: ${computer.score}\n');
 
-    print("Você gostaria de utilizar o dado mágico? ;) Digite 'S' ou 'N'");
-    String useMagicDice = stdin.readLineSync()!;
-    if (useMagicDice == 'S' || useMagicDice == 's') {
-      player.magicDice = true;
-      player.rollMagicDice(magicDice);
-      print('\nVocê rolou: \ndado 1: ${magicDice.topFace} \n');
-      
-      print('Soma dos seus dados: ${player.score}');
-      print('Soma dos dados do computador: ${computer.score}\n');
+    if (player.magicDice != true) {
+      print("Você gostaria de utilizar o dado mágico? ;) Digite 'S' ou 'N'");
+      String useMagicDice = stdin.readLineSync()!;
+      if (useMagicDice == 'S' || useMagicDice == 's') {
+        player.magicDice = true;
+        player.rollMagicDice(magicDice);
+        print('\nVocê rolou: \ndado mágico: ${magicDice.topFace} \n');
+        
+        print('Soma dos seus dados: ${player.score}');
+        print('Soma dos dados do computador: ${computer.score}\n');
+      }
     }
     
     if (player.score > computer.score) {

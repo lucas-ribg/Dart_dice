@@ -13,16 +13,12 @@ class Player {
   }
 
   void rollMagicDice(MagicDice dice) {
-    if (magicDice == true) {
-      print("Dado mágico já utilizado!");
-    } else {
-      dice.roll();
-      if (dice.topFace == 0) {
-        score = score/2;
-      }
-      if (dice.topFace == 1) {
-        score = score*2;
-      }
+    dice.roll();
+    if (dice.topFace == 0) {
+      score = score/2;
+    }
+    if (dice.topFace == 1) {
+      score = score*2;
     }
   }
 }
